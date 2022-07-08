@@ -1,5 +1,6 @@
 {
   "name": "capacitor-firebase",
+  "version": "0.1.0",
   "private": true,
   "packageManager": "npm@8.3.0",
   "workspaces": [
