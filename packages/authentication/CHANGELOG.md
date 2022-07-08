@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2
+
+### Patch Changes
+
+- [`a436258`](https://github.com/capawesome-team/capacitor-firebase/commit/a4362583b0982dc3bcf7f19dc3e6b4c4ddd5daf6): iOS MultiFactor auth, verifyPhoneNumber
+
 ## 0.5.0
 
 ### Minor Changes
