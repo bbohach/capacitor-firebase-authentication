@@ -153,7 +153,7 @@ public typealias AuthStateChangedObserver = () -> Void
             print("User is signed in!", authError)
             let user = self.getCurrentUser()
             let result = FirebaseAuthenticationHelper.createSignInResult(credential: nil, user: user, idToken: nil, nonce: nil, accessToken: nil)
-            savedCall.resolve(result)
+            self.savedCall!.resolve(result)
           } else {
               // Second factor is required, or some other issue
             let resolver = authError!.userInfo[AuthErrorUserInfoMultiFactorResolverKey] as! MultiFactorResolver
@@ -244,7 +244,7 @@ public typealias AuthStateChangedObserver = () -> Void
                     if error != nil {
                         // Failed to verify phone number.
                         print("Error sending sms to enroll: ", error)
-                        call.reject()
+                        call.reject("Error sending sms to enroll")
                     }
                       var result = JSObject()
                       result["verificationId"] = verificationId
@@ -264,7 +264,7 @@ public typealias AuthStateChangedObserver = () -> Void
                 if error != nil {
                     // Failed to verify phone number.
                     print("Error sending sms to sign in: ", error)
-                    call.reject()
+                    call.reject("Error sending sms to sign in")
                 }
                   var result = JSObject()
                   result["verificationId"] = verificationId
